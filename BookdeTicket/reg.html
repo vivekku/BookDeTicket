@@ -1,0 +1,113 @@
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Book De Ticket</title>
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<script type="text/javascript">
+			function validate(){
+				var p1=document.f1.psw1.value;
+				var p2=document.f1.psw2.value;
+				var name = document.f1.name.value;
+				var t=0;
+				if (name.length==0||p1.length==0||p2.length==0){  
+				  alert("Name or Password can't be Blank!");  
+				  return false;				  
+				} else
+						t++;
+
+				if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(f1.email.value))  
+				  {  
+					t++; 
+				  }else{  
+					alert("You have Entered an Invalid Email Address!");
+					return (false);
+				  }
+				  
+				  if (/^\d{10}$/.test(f1.num.value))  
+				  {  
+					t++;  
+				  }else{  
+					alert("You have Entered an Invalid Phone Number!!");
+					return (false);
+				  }
+				  
+				if(p1==p2){
+					t++;
+				}
+				else{
+					alert("Password must be Same!\n Try Again!");
+					return false;
+				}
+				if(t==4)
+					return true;
+			}
+		</script>
+	</head>
+	<body  background="img/image.jpg" topmargin="0">
+	<img src = "img/logo.png" style="width:1333.1px;height:220px;border:0">
+	<center>
+	<font size=10>
+		<form method="POST" action="saveuser.php" name="f1" onsubmit="return validate()">
+		<fieldset style="width:270px">
+		<legend>
+		<div style="color:#0000FF">
+		<h1>Registration</h1>
+		</div>
+		</legend>
+		<table>
+			<tr>
+			<td>Name:</td>
+			<td><input type="text" name="name"></td>
+			</tr><tr>
+			<td>Email ID:</td>
+			<td><input type="text" name="email"></td>
+			</tr>
+			<tr>
+			<td>DOB:</td>
+			<td><input type="date" name="dob"></td>
+			</tr>
+			<tr>	
+ 			<td>Password:</td>
+			<td><input type="password" name="psw1"></td>
+			</tr>
+			<tr>	
+ 			<td>Confirm Password:</td>
+			<td><input type="password" name="psw2"></td>
+			</tr>
+			<tr>
+			<td>Contact Number:</td>
+			<td><input type="number" name="num"></td>
+			</tr>
+			<tr>
+			<td>Gender:</td>
+			<td><input type="radio" name="gender" id="male" value="male">
+			<label for="male">Male</label>
+			<input type="radio" name="gender" id="female" value="female">
+			<label for="female">Female</label>
+			</td>
+			</tr>
+			<tr><td></td></tr>
+			<tr><td></td>
+			<td align="center"><input type="submit" name="register" value="Register"> &nbsp &nbsp &nbsp &nbsp &nbsp<input type="reset"></td>
+			</tr>
+			<tr><td></td></tr>
+			<tr><td></td></tr>
+			<tr><td></td></tr>
+			<tr><td></td></tr>
+			</tr>
+			<td colspan =4 align="center"> Already Registered? <a href="login.php">Login Here</a></td>
+			</tr>
+		</table>
+		</fieldset>
+		</form>
+		</font>
+	</center>
+	</font>
+	<footer>
+  		<p>Created by: Us</p>
+  			<p>Contact information: <a href="mailto:vivek.it.1108@gmail.com">Us</a>.</p>
+	</footer>
+	</body>
+
+</html>
